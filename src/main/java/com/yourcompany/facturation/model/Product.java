@@ -36,5 +36,9 @@ public class Product {
 	
 	@TextArea
 	String comments;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@DescriptionsList
+	Author author;
 
 }

@@ -11,7 +11,7 @@ import org.openxava.util.*;
 public class facturation {
 
 	public static void main(String[] args) throws Exception {
-		DBServer.start("facturation-db"); // To use your own database comment this line and configure src/main/webapp/META-INF/context.xml
+		//DBServer.start("facturation-db"); // To use your own database comment this line and configure src/main/webapp/META-INF/context.xml
 		AppServer.run("facturation"); // Use AppServer.run("") to run in root context
 	}
 

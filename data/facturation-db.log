@@ -1,9 +1,12 @@
 /*C4*/SET SCHEMA PUBLIC
 DISCONNECT
 /*C5*/SET SCHEMA PUBLIC
-create table Invoice_details (Invoice_oid varchar(32) not null, cantidad integer not null, product_number integer)
-alter table Invoice_details add constraint FKi1r56p1hqv28yvcc29lyqnpsw foreign key (product_number) references Product
-alter table Invoice_details add constraint FKsed3i3cae25o1d4bwjstfn8wc foreign key (Invoice_oid) references Invoice
-INSERT INTO INVOICE VALUES('4028e48e99e4757c0199e47606080000','a','2025-10-14',2,2025,123)
-INSERT INTO INVOICE_DETAILS VALUES('4028e48e99e4757c0199e47606080000',0,152)
+alter table Author add column name varchar(50)
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO AUTHOR VALUES('4028e48e9a0a3825019a0a387b9e0000',NULL,'Juanito')
+COMMIT
+DELETE FROM AUTHOR WHERE OID='4028e48e9a085fa3019a086185790000'
+INSERT INTO AUTHOR VALUES('4028e48e9a085fa3019a086185790000','Juss','Juss')
+COMMIT
+DELETE FROM PRODUCT WHERE NUMBER=11
 COMMIT
