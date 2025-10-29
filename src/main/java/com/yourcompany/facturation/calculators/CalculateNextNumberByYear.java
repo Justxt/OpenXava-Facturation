@@ -20,7 +20,7 @@ public class CalculateNextNumberByYear implements ICalculator{
 		
 		public Object calculate() throws Exception {
 			Query query = XPersistence.getManager()
-					.createQuery("select max(f.number) from Invoice f where f.year =:year");
+					.createQuery("select max(f.number) from CommercialDocument f where f.year =:year");
 			query.setParameter("year", year);
 			Integer ultimoNumero = (Integer) query.getSingleResult();
 			return ultimoNumero == null ? 1 : ultimoNumero + 1;
